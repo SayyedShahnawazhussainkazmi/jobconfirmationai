@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="JieEgQBvJGGgqpmKtymtKOK1i8cAY3lRbgfnQ0SvKMM" />
+<title>Jobconfirmation.Ai — Verified Careers, Trusted Employers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5522128593075512" crossorigin="anonymous"></script>
+<style>
+  :root{
+    --ink:#10192E;
+    --ink-70: rgba(16,25,46,0.7);
+    --paper:#F4F6F5;
+    --paper-dim:#E9ECEB;
+    --verify:#2F8F5B;
+    --verify-dim:#E4F1EA;
+    --gold:#D9A441;
+    --gold-dim:#F6E8CB;
+    --line:#DADFE3;
+    --muted:#5B6472;
+    --white:#FFFFFF;
+    --danger:#B3432F;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',ui-sans-serif,system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer; border:none;}
+  input,textarea,select{font-family:inherit; font-size:16px;}
+  ::selection{background:var(--gold-dim);}
+  :focus-visible{outline:2px solid var(--verify); outline-offset:2px;}
+
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+
+  /* HEADER */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(244,246,245,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; height:72px;}
+  .brand{display:flex; align-items:center; gap:10px; font-family:'Fraunces',serif; font-weight:600; font-size:1.25rem;}
+  .brand .mark{width:30px; height:30px; flex-shrink:0;}
+  .brand .dot{color:var(--verify);}
+  .nav-links{display:flex; align-items:center; gap:28px; font-size:0.92rem; font-weight:500;}
+  .nav-links a{color:var(--muted); transition:color .15s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{
+    background:var(--ink); color:var(--white); padding:10px 18px; border-radius:100px;
+    font-weight:600; font-size:0.88rem; transition:transform .15s, background .15s;
+  }
+  .nav-cta:hover{background:var(--verify);}
+
+  /* HERO */
+  .hero{padding:76px 0 56px; position:relative; overflow:hidden;}
+  .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:48px; align-items:center;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--verify); background:var(--verify-dim); padding:6px 12px; border-radius:100px; margin-bottom:20px;
+  }
+  .hero h1{font-size:clamp(2.1rem, 4vw, 3.4rem); line-height:1.08; margin-bottom:20px;}
+  .hero h1 em{font-style:italic; color:var(--verify);}
+  .hero p.lead{font-size:1.08rem; color:var(--muted); max-width:46ch; line-height:1.6; margin-bottom:32px;}
+  .search-bar{
+    display:flex; gap:10px; background:var(--white); border:1px solid var(--line); border-radius:14px;
+    padding:8px; box-shadow:0 2px 10px rgba(16,25,46,0.04);
+  }
+  .search-bar input{flex:1; border:none; background:transparent; padding:12px 14px; font-size:0.98rem;}
+  .search-bar input:focus{outline:none;}
+  .search-bar button{
+    background:var(--verify); color:var(--white); padding:0 22px; border-radius:9px; font-weight:600; font-size:0.92rem;
+  }
+  .hero-stats{display:flex; gap:28px; margin-top:28px;}
+  .hero-stats div{font-size:0.82rem; color:var(--muted);}
+  .hero-stats strong{display:block; font-family:'Fraunces',serif; font-size:1.5rem; color:var(--ink); font-weight:600;}
+
+  /* SEAL / signature element */
+  .seal-wrap{display:flex; justify-content:center; align-items:center;}
+  .seal{width:220px; height:220px; animation:stampIn 0.7s cubic-bezier(.2,1.4,.4,1) 0.15s both;}
+  @keyframes stampIn{
+    0%{transform:scale(2.4) rotate(-18deg); opacity:0;}
+    60%{transform:scale(0.94) rotate(3deg); opacity:1;}
+    100%{transform:scale(1) rotate(-6deg); opacity:1;}
+  }
+  @media (prefers-reduced-motion: reduce){ .seal{animation:none; transform:rotate(-6deg);} }
+
+  /* JOBS SECTION */
+  .section{padding:56px 0;}
+  .section-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:28px; gap:16px; flex-wrap:wrap;}
+  .section-head h2{font-size:1.7rem;}
+  .section-head .count{color:var(--muted); font-size:0.9rem;}
+
+  .job-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(310px,1fr)); gap:16px;}
+  .job-card{
+    background:var(--white); border:1px solid var(--line); border-radius:16px; padding:22px;
+    display:flex; flex-direction:column; gap:12px; transition:box-shadow .18s, transform .18s;
+  }
+  .job-card:hover{box-shadow:0 8px 24px rgba(16,25,46,0.08); transform:translateY(-2px);}
+  .job-card-top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
+  .job-title{font-family:'Fraunces',serif; font-weight:600; font-size:1.12rem; line-height:1.3;}
+  .job-company{color:var(--muted); font-size:0.88rem; margin-top:2px;}
+  .verified-badge{
+    display:flex; align-items:center; gap:4px; flex-shrink:0;
+    background:var(--verify-dim); color:var(--verify); font-size:0.72rem; font-weight:700;
+    padding:5px 9px; border-radius:100px; white-space:nowrap;
+  }
+  .job-meta{display:flex; flex-wrap:wrap; gap:8px; font-size:0.8rem; color:var(--muted);}
+  .job-meta span{background:var(--paper-dim); padding:4px 10px; border-radius:100px;}
+  .job-desc{font-size:0.88rem; color:var(--ink-70); line-height:1.55; flex:1;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+  .job-card-bottom{display:flex; justify-content:space-between; align-items:center; margin-top:4px;}
+  .job-date{font-size:0.76rem; color:var(--muted);}
+  .btn-view{
+    background:var(--ink); color:var(--white); padding:9px 16px; border-radius:9px; font-size:0.85rem; font-weight:600;
+    transition:background .15s;
+  }
+  .btn-view:hover{background:var(--verify);}
+
+  .empty-state{
+    border:1px dashed var(--line); border-radius:16px; padding:48px 24px; text-align:center; color:var(--muted);
+  }
+  .empty-state h3{color:var(--ink); margin-bottom:8px; font-size:1.1rem;}
+
+  /* MODAL */
+  .modal-overlay{
+    display:none; position:fixed; inset:0; background:rgba(16,25,46,0.55); z-index:100;
+    align-items:flex-start; justify-content:center; padding:40px 16px; overflow-y:auto;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal{
+    background:var(--white); border-radius:20px; max-width:640px; width:100%; padding:32px;
+    animation:modalIn .22s ease both;
+  }
+  @keyframes modalIn{from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:translateY(0);}}
+  .modal-close{float:right; background:var(--paper-dim); width:32px; height:32px; border-radius:100px; font-size:1rem; color:var(--muted);}
+  .modal h2{font-size:1.5rem; margin-bottom:6px; padding-right:40px;}
+  .modal .job-company{margin-bottom:16px;}
+  .modal-section{margin:18px 0;}
+  .modal-section h4{font-size:0.82rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:8px;}
+  .modal-section p, .modal-section li{font-size:0.92rem; line-height:1.65; color:var(--ink-70);}
+  .modal-section ul{padding-left:18px;}
+
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;}
+  .field input[type=text], .field input[type=email], .field input[type=tel], .field textarea, .field select{
+    width:100%; border:1px solid var(--line); border-radius:9px; padding:11px 13px; background:var(--paper);
+  }
+  .field input:focus, .field textarea:focus, .field select:focus{outline:none; border-color:var(--verify); background:var(--white);}
+  .field textarea{resize:vertical; min-height:80px;}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .file-drop{
+    border:1.5px dashed var(--line); border-radius:10px; padding:18px; text-align:center; background:var(--paper);
+    font-size:0.86rem; color:var(--muted); cursor:pointer;
+  }
+  .file-drop.has-file{border-color:var(--verify); color:var(--verify); background:var(--verify-dim);}
+  .hint{font-size:0.78rem; color:var(--muted); margin-top:6px;}
+  .btn-primary{
+    background:var(--verify); color:var(--white); padding:13px 20px; border-radius:10px; font-weight:700; font-size:0.95rem;
+    width:100%; transition:background .15s;
+  }
+  .btn-primary:hover{background:#256e46;}
+  .btn-primary:disabled{background:var(--muted); cursor:not-allowed;}
+  .form-msg{font-size:0.85rem; margin-top:10px; padding:10px 12px; border-radius:8px;}
+  .form-msg.ok{background:var(--verify-dim); color:var(--verify);}
+  .form-msg.err{background:#F6E3DF; color:var(--danger);}
+
+  /* ADMIN */
+  .admin-gate{max-width:380px; margin:60px auto; background:var(--white); border:1px solid var(--line); border-radius:18px; padding:36px; text-align:center;}
+  .admin-gate .seal-mini{width:56px; height:56px; margin:0 auto 16px;}
+  .admin-gate h2{font-size:1.3rem; margin-bottom:6px;}
+  .admin-gate p{color:var(--muted); font-size:0.88rem; margin-bottom:22px;}
+
+  .admin-bar{display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; flex-wrap:wrap; gap:12px;}
+  .tab-row{display:flex; gap:8px; background:var(--white); border:1px solid var(--line); padding:4px; border-radius:100px;}
+  .tab-btn{padding:8px 18px; border-radius:100px; font-size:0.86rem; font-weight:600; color:var(--muted);}
+  .tab-btn.active{background:var(--ink); color:var(--white);}
+  .logout-btn{font-size:0.82rem; color:var(--muted); text-decoration:underline;}
+
+  .admin-panel{display:none;}
+  .admin-panel.active{display:block;}
+
+  .admin-form{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:26px; margin-bottom:28px;}
+  .admin-form h3{font-size:1.05rem; margin-bottom:18px;}
+
+  .admin-job-row{
+    background:var(--white); border:1px solid var(--line); border-radius:14px; padding:18px 20px;
+    display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:10px; flex-wrap:wrap;
+  }
+  .admin-job-row .info{flex:1; min-width:200px;}
+  .admin-job-row .info .t{font-weight:600; font-size:0.98rem;}
+  .admin-job-row .info .s{font-size:0.8rem; color:var(--muted); margin-top:2px;}
+  .row-actions{display:flex; gap:8px;}
+  .icon-btn{
+    background:var(--paper-dim); padding:8px 14px; border-radius:8px; font-size:0.8rem; font-weight:600; color:var(--ink);
+  }
+  .icon-btn.danger{color:var(--danger);}
+  .icon-btn:hover{background:var(--paper);}
+  .status-pill{font-size:0.72rem; font-weight:700; padding:3px 9px; border-radius:100px;}
+  .status-pill.open{background:var(--verify-dim); color:var(--verify);}
+  .status-pill.closed{background:#EFE1D9; color:#9A5A2E;}
+
+  .app-card{background:var(--white); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-bottom:10px;}
+  .app-card-top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px; flex-wrap:wrap;}
+  .app-name{font-weight:700; font-size:1rem;}
+  .app-for{font-size:0.8rem; color:var(--muted); margin-top:2px;}
+  .app-contact{font-size:0.85rem; color:var(--ink-70); margin-top:8px; line-height:1.6;}
+  .app-note{font-size:0.85rem; color:var(--ink-70); margin-top:8px; background:var(--paper); padding:10px 12px; border-radius:8px;}
+  .resume-link{
+    display:inline-flex; align-items:center; gap:6px; margin-top:10px; font-size:0.85rem; font-weight:600;
+    color:var(--verify); background:var(--verify-dim); padding:8px 14px; border-radius:8px;
+  }
+
+  footer{border-top:1px solid var(--line); padding:32px 0; margin-top:40px; color:var(--muted); font-size:0.82rem; text-align:center;}
+
+  @media (max-width:760px){
+    .hero-grid{grid-template-columns:1fr;}
+    .seal-wrap{order:-1;}
+    .seal{width:140px; height:140px;}
+    .field-row{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+  ins.adsbygoogle{display:block; max-width:100%; overflow:hidden; margin:0 auto;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="14" stroke="#10192E" stroke-width="1.6"/>
+        <path d="M9 15.5L13 19.5L21 10.5" stroke="#2F8F5B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Jobconfirmation<span class="dot">.Ai</span></span>
+    </div>
+    <nav class="nav-links">
+      <a href="#jobs">Jobs</a>
+      <a href="#how">How it works</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span id="accountStatus" style="font-size:0.85rem; color:var(--muted); display:none;"></span>
+      <button class="icon-btn" id="accountBtn" style="padding:9px 16px; border-radius:100px;">Sign in</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.5 9L10 3" stroke="#2F8F5B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Verified Employer Network
+      </div>
+      <h1>Careers built on <em>trust</em>, not guesswork.</h1>
+      <p class="lead">Every opportunity on Jobconfirmation.Ai is reviewed and verified by our team before publication. Explore genuine roles from credible employers, and know with certainty where your application lands.</p>
+      <form class="search-bar" id="searchForm">
+        <input type="text" id="searchInput" placeholder="Search by role, department or location…">
+        <button type="submit">Search</button>
+      </form>
+      <div class="hero-stats">
+        <div><strong id="statOpen">0</strong>Open positions</div>
+        <div><strong>100%</strong>Employer verification</div>
+      </div>
+    </div>
+    <div class="seal-wrap">
+      <svg class="seal" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="92" fill="#FFFFFF" stroke="#2F8F5B" stroke-width="2"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#2F8F5B" stroke-width="1.4" stroke-dasharray="3 5"/>
+        <path id="circlePath" d="M100,26 A74,74 0 1 1 99.9,26" fill="none"/>
+        <text font-family="Inter" font-size="10.2" font-weight="700" letter-spacing="2.5" fill="#10192E">
+          <textPath href="#circlePath" startOffset="2%">JOBCONFIRMATION.AI • VERIFIED HIRE • JOBCONFIRMATION.AI •</textPath>
+        </text>
+        <path d="M66 101L88 123L136 75" stroke="#2F8F5B" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="jobs">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Current Openings</h2>
+      <span class="count"><span id="jobCount">0</span> verified opportunities</span>
+    </div>
+    <div id="jobGrid" class="job-grid"></div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head"><h2>The Jobconfirmation.Ai Standard</h2></div>
+    <div class="job-grid">
+      <div class="job-card">
+        <div class="verified-badge" style="width:fit-content;">01</div>
+        <div class="job-title">Rigorous verification</div>
+        <div class="job-desc">Every role is reviewed by our team before it's published, so you never invest time in a listing that isn't genuine.</div>
+      </div>
+      <div class="job-card">
+        <div class="verified-badge" style="width:fit-content;">02</div>
+        <div class="job-title">One seamless application</div>
+        <div class="job-desc">Submit your profile and resume in a single, secure step — no redirects, no third-party portals.</div>
+      </div>
+      <div class="job-card">
+        <div class="verified-badge" style="width:fit-content;">03</div>
+        <div class="job-title">Direct access to hiring teams</div>
+        <div class="job-desc">Your application reaches our hiring team directly, ready for review — no delays, no middlemen.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOB DETAIL / APPLY MODAL -->
+<div class="modal-overlay" id="jobModal">
+  <div class="modal">
+    <button class="modal-close" id="closeJobModal">✕</button>
+    <div id="jobModalBody"></div>
+  </div>
+</div>
+
+<!-- ACCOUNT MODAL (candidate signup/login) -->
+<div class="modal-overlay" id="accountModal">
+  <div class="modal" style="max-width:420px;">
+    <button class="modal-close" id="closeAccountModal">✕</button>
+    <h2 style="font-size:1.3rem; margin-bottom:16px;">Your Jobconfirmation.Ai account</h2>
+    <div class="tab-row" style="margin-bottom:20px;">
+      <button class="tab-btn active" id="acctTabLogin">Sign in</button>
+      <button class="tab-btn" id="acctTabSignup">Sign up</button>
+    </div>
+    <div id="acctPanelLogin">
+      <div class="field"><label>Email address</label><input type="email" id="loginEmail"></div>
+      <div class="field"><label>Password</label><input type="password" id="loginPassword"></div>
+      <button class="btn-primary" id="loginBtn">Sign in</button>
+      <div id="loginMsg" class="form-msg err" style="display:none;"></div>
+    </div>
+    <div id="acctPanelSignup" style="display:none;">
+      <div class="field"><label>Full name</label><input type="text" id="signupName"></div>
+      <div class="field"><label>Email address</label><input type="email" id="signupEmail"></div>
+      <div class="field"><label>Password</label><input type="password" id="signupPassword"></div>
+      <button class="btn-primary" id="signupBtn">Create account</button>
+      <div id="signupMsg" class="form-msg err" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN MODAL (never appears on the page unless explicitly triggered) -->
+<div class="modal-overlay" id="adminModal">
+  <div class="modal" style="max-width:380px;">
+    <button class="modal-close" id="closeAdminModal">✕</button>
+    <div id="adminGate" style="text-align:center; padding-top:6px;">
+      <svg width="48" height="48" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin:0 auto 14px;">
+        <circle cx="100" cy="100" r="92" fill="#FFFFFF" stroke="#2F8F5B" stroke-width="4"/>
+        <path d="M66 101L88 123L136 75" stroke="#2F8F5B" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h2 style="font-size:1.2rem; margin-bottom:6px;">Hiring team access</h2>
+      <p style="color:var(--muted); font-size:0.85rem; margin-bottom:20px;">Sign in to manage open positions and review applications.</p>
+      <div class="field" style="text-align:left;"><input type="email" id="adminEmail" placeholder="Admin email"></div>
+      <div class="field" style="text-align:left;"><input type="password" id="adminPassword" placeholder="Admin password"></div>
+      <button class="btn-primary" id="adminLoginBtn">Sign in</button>
+      <div id="adminLoginMsg" class="form-msg err" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN DASHBOARD (hidden from normal browsing — only shown after a successful admin login) -->
+<section class="section" id="admin-section" style="display:none;">
+  <div class="wrap">
+
+    <div id="adminDashboard">
+      <div class="admin-bar">
+        <div class="tab-row">
+          <button class="tab-btn active" data-tab="post">Post a job</button>
+          <button class="tab-btn" data-tab="manage">Manage jobs</button>
+          <button class="tab-btn" data-tab="applications">Applications</button>
+        </div>
+        <button class="logout-btn" id="adminLogoutBtn">Sign out</button>
+      </div>
+
+      <div class="admin-panel active" id="panel-post">
+        <div class="admin-form">
+          <h3 id="postFormTitle">Post a new job</h3>
+          <input type="hidden" id="editingJobId">
+          <div class="field-row">
+            <div class="field"><label>Job title</label><input type="text" id="fTitle" placeholder="e.g. Senior Backend Engineer"></div>
+            <div class="field"><label>Company name</label><input type="text" id="fCompany" placeholder="Your company"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Location</label><input type="text" id="fLocation" placeholder="e.g. Bengaluru / Remote"></div>
+            <div class="field"><label>Job type</label>
+              <select id="fType">
+                <option>Full-time</option><option>Part-time</option><option>Internship</option><option>Contract</option><option>Remote</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label>Salary range (optional)</label><input type="text" id="fSalary" placeholder="e.g. ₹8–12 LPA"></div>
+          <div class="field"><label>Job description</label><textarea id="fDesc" placeholder="Role summary and responsibilities…"></textarea></div>
+          <div class="field"><label>Requirements (one per line)</label><textarea id="fReq" placeholder="3+ years experience&#10;Strong in Node.js&#10;..."></textarea></div>
+          <button class="btn-primary" id="submitJobBtn">Publish job</button>
+          <div id="jobFormMsg" class="form-msg ok" style="display:none;"></div>
+        </div>
+      </div>
+
+      <div class="admin-panel" id="panel-manage">
+        <div id="manageList"></div>
+      </div>
+
+      <div class="admin-panel" id="panel-applications">
+        <div class="field" style="max-width:340px; margin-bottom:18px;">
+          <select id="appJobFilter"><option value="">All jobs</option></select>
+        </div>
+        <div id="applicationsList"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Jobconfirmation.Ai is a verified careers platform connecting professionals with credible employers. © 2026 Jobconfirmation.Ai. All rights reserved.
+    <div style="margin-top:12px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="#" id="openAboutLink" style="text-decoration:underline; color:var(--muted); font-size:0.82rem;">About Us</a>
+      <a href="#" id="openPrivacyLink" style="text-decoration:underline; color:var(--muted); font-size:0.82rem;">Privacy Policy</a>
+      <a href="#" id="openContactLink" style="text-decoration:underline; color:var(--muted); font-size:0.82rem;">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ABOUT US MODAL -->
+<div class="modal-overlay" id="aboutModal">
+  <div class="modal">
+    <button class="modal-close" id="closeAboutModal">✕</button>
+    <h2 style="font-size:1.4rem; margin-bottom:16px;">About Jobconfirmation.Ai</h2>
+    <div class="modal-section">
+      <p>Jobconfirmation.Ai was built on a simple idea: job seekers deserve to know that the roles they're applying to are real. Too many job boards are cluttered with expired listings, duplicate postings, and outright fake jobs that waste candidates' time and hope.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Our approach</h4>
+      <p>Every role on our platform is reviewed before it goes live. Employers post directly, candidates apply directly, and applications reach the hiring team without middlemen or third-party redirects. What you see is what's actually hiring.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Who we serve</h4>
+      <p>We work with employers who want a straightforward way to reach genuine candidates, and with professionals who want their job search to be built on trust rather than guesswork.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY MODAL -->
+<div class="modal-overlay" id="privacyModal">
+  <div class="modal">
+    <button class="modal-close" id="closePrivacyModal">✕</button>
+    <h2 style="font-size:1.4rem; margin-bottom:6px;">Privacy Policy</h2>
+    <p class="hint" style="margin-bottom:16px;">Last updated: August 2026</p>
+    <div class="modal-section">
+      <h4>Information we collect</h4>
+      <p>When you create an account, we collect your name, email address, and password. When you apply to a role, we additionally collect your phone number, an optional cover note, and the resume file you upload.</p>
+    </div>
+    <div class="modal-section">
+      <h4>How we use your information</h4>
+      <ul>
+        <li>To create and manage your account</li>
+        <li>To submit your application to the employer for the role you applied to</li>
+        <li>To notify you by email or browser notification when new verified roles are posted</li>
+        <li>To improve and maintain the platform</li>
+      </ul>
+    </div>
+    <div class="modal-section">
+      <h4>How we store your information</h4>
+      <p>Your account data and applications are stored securely using Supabase, our database and authentication provider. Resumes are stored in encrypted cloud storage and are only accessible to you and our hiring team.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Third-party services</h4>
+      <p>We use Resend to deliver email notifications, and Google AdSense to display advertising on this site. Google AdSense may use cookies to serve ads based on your visits to this and other websites. You can learn more about how Google uses this data at Google's Privacy & Terms site.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Your rights</h4>
+      <p>You can request access to, correction of, or deletion of your personal data at any time by contacting us at jobconfirmationai@gmail.com.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Children's privacy</h4>
+      <p>Jobconfirmation.Ai is intended for professionals seeking employment and is not directed at children. We do not knowingly collect information from anyone under 18.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Changes to this policy</h4>
+      <p>We may update this policy from time to time. Changes will be posted on this page with an updated revision date.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Contact</h4>
+      <p>Questions about this policy can be sent to <a href="mailto:jobconfirmationai@gmail.com" style="color:var(--verify); text-decoration:underline;">jobconfirmationai@gmail.com</a>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT US MODAL -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal" style="max-width:420px;">
+    <button class="modal-close" id="closeContactModal">✕</button>
+    <h2 style="font-size:1.4rem; margin-bottom:16px;">Contact Us</h2>
+    <div class="modal-section">
+      <p>Have a question about a listing, your application, or the platform itself? We're happy to help.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Email</h4>
+      <p><a href="mailto:jobconfirmationai@gmail.com" style="color:var(--verify); text-decoration:underline; font-weight:600;">jobconfirmationai@gmail.com</a></p>
+    </div>
+    <div class="modal-section">
+      <p class="hint">We typically respond within 1–2 business days.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ---------- CONFIG ----------
+const SUPABASE_URL = "https://zmsdghkjdnjrrtigwans.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inptc2RnaGtqZG5qcnJ0aWd3YW5zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc4MTY0MzQsImV4cCI6MjEwMzM5MjQzNH0.YHZTeIed3lGsMcxIA8BEWmzI1eRuD1xYOxU5U-RzmlU";
+const ADMIN_EMAIL = "shahnawazhussainsayyed313@gmail.com";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+let isAdmin = false;
+let currentUser = null; // logged-in user {id, name, email}
+let pendingJobId = null; // job the candidate was trying to apply to before being asked to sign in
+
+function uid(prefix){
+  return prefix + '_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+}
+function escapeHtml(str){
+  return (str || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function fmtDate(iso){
+  try{ return new Date(iso).toLocaleDateString('en-IN', {day:'numeric', month:'short', year:'numeric'}); }catch(e){ return ''; }
+}
+
+// ---------- STATE ----------
+let allJobs = [];
+let allApplications = [];
+
+// ---------- AUTH / ACCOUNTS ----------
+async function refreshCurrentUser(){
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if(session && session.user){
+    currentUser = {
+      id: session.user.id,
+      email: session.user.email,
+      name: (session.user.user_metadata && session.user.user_metadata.name) || session.user.email.split('@')[0]
+    };
+    isAdmin = currentUser.email.toLowerCase() === ADMIN_EMAIL.toLowerCase();
+  }else{
+    currentUser = null;
+    isAdmin = false;
+  }
+}
+
+function updateAccountUI(){
+  const statusEl = document.getElementById('accountStatus');
+  const btn = document.getElementById('accountBtn');
+  if(currentUser){
+    statusEl.textContent = 'Hi, ' + currentUser.name.split(' ')[0];
+    statusEl.style.display = 'inline';
+    btn.textContent = 'Sign out';
+  }else{
+    statusEl.style.display = 'none';
+    btn.textContent = 'Sign in';
+  }
+}
+
+// ---------- PUSH NOTIFICATIONS (automatic, no button needed) ----------
+const VAPID_PUBLIC_KEY = 'BBnPcmQPZ9vjKYJbFzWWNzyCXcfrQyRqWK0HKqAd-an24p_xhqCBwc32-zFSVkaSKBQdw4GoIIYOiA0Vd-LW2-M';
+
+function urlBase64ToUint8Array(base64String){
+  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+  const rawData = atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+  for(let i = 0; i < rawData.length; ++i){ outputArray[i] = rawData.charCodeAt(i); }
+  return outputArray;
+}
+
+async function autoEnableNotifications(){
+  if(!currentUser || isAdmin) return;
+  if(!('serviceWorker' in navigator) || !('PushManager' in window)) return;
+  try{
+    const reg = await navigator.serviceWorker.register('/sw.js');
+    const existing = await reg.pushManager.getSubscription();
+    if(existing) return; // already subscribed on this device
+
+    if(Notification.permission === 'denied') return; // respect a prior explicit decline
+
+    const permission = await Notification.requestPermission();
+    if(permission !== 'granted') return;
+
+    const sub = await reg.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
+    });
+    const subJson = sub.toJSON();
+    await supabaseClient.from('push_subscriptions').upsert({
+      user_id: currentUser.id,
+      endpoint: subJson.endpoint,
+      p256dh: subJson.keys.p256dh,
+      auth_key: subJson.keys.auth
+    }, { onConflict: 'endpoint' });
+  }catch(err){
+    console.error('Auto notification setup failed:', err);
+  }
+}
+
+document.getElementById('accountBtn').addEventListener('click', async () => {
+  if(currentUser){
+    await supabaseClient.auth.signOut();
+    currentUser = null; isAdmin = false;
+    updateAccountUI();
+    document.getElementById('admin-section').style.display = 'none';
+  }else{
+    openAccountModal();
+  }
+});
+
+function openAccountModal(){
+  document.getElementById('loginMsg').style.display = 'none';
+  document.getElementById('signupMsg').style.display = 'none';
+  document.getElementById('accountModal').classList.add('open');
+}
+document.getElementById('closeAccountModal').addEventListener('click', () => {
+  document.getElementById('accountModal').classList.remove('open');
+  pendingJobId = null;
+});
+document.getElementById('accountModal').addEventListener('click', (e) => {
+  if(e.target.id === 'accountModal'){ document.getElementById('accountModal').classList.remove('open'); pendingJobId = null; }
+});
+
+document.getElementById('acctTabLogin').addEventListener('click', () => {
+  document.getElementById('acctTabLogin').classList.add('active');
+  document.getElementById('acctTabSignup').classList.remove('active');
+  document.getElementById('acctPanelLogin').style.display = 'block';
+  document.getElementById('acctPanelSignup').style.display = 'none';
+});
+document.getElementById('acctTabSignup').addEventListener('click', () => {
+  document.getElementById('acctTabSignup').classList.add('active');
+  document.getElementById('acctTabLogin').classList.remove('active');
+  document.getElementById('acctPanelSignup').style.display = 'block';
+  document.getElementById('acctPanelLogin').style.display = 'none';
+});
+
+async function afterSuccessfulLogin(){
+  await refreshCurrentUser();
+  document.getElementById('accountModal').classList.remove('open');
+  updateAccountUI();
+  if(isAdmin){
+    document.getElementById('admin-section').style.display = 'block';
+    window.scrollTo({top: document.getElementById('admin-section').offsetTop - 80, behavior:'smooth'});
+    refreshAdminData();
+  }else if(pendingJobId){
+    const jid = pendingJobId; pendingJobId = null; openJobModal(jid);
+  }
+  autoEnableNotifications();
+}
+
+document.getElementById('signupBtn').addEventListener('click', async () => {
+  const name = document.getElementById('signupName').value.trim();
+  const email = document.getElementById('signupEmail').value.trim().toLowerCase();
+  const pw = document.getElementById('signupPassword').value;
+  const msg = document.getElementById('signupMsg');
+  msg.style.display = 'none';
+  if(!name || !email || !pw){
+    msg.textContent = 'Please fill in your name, email and password.'; msg.style.display = 'block'; return;
+  }
+  if(pw.length < 6){
+    msg.textContent = 'Password should be at least 6 characters.'; msg.style.display = 'block'; return;
+  }
+  try{
+    const { data, error } = await supabaseClient.auth.signUp({
+      email, password: pw, options: { data: { name } }
+    });
+    if(error){
+      msg.textContent = error.message; msg.style.display = 'block'; return;
+    }
+    if(!data.session){
+      msg.textContent = 'Account created — please check your email to confirm it, then sign in.';
+      msg.className = 'form-msg ok'; msg.style.display = 'block';
+      return;
+    }
+    await afterSuccessfulLogin();
+  }catch(err){
+    msg.textContent = 'Something went wrong creating your account. Please try again.'; msg.style.display = 'block';
+  }
+});
+
+document.getElementById('loginBtn').addEventListener('click', async () => {
+  const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+  const pw = document.getElementById('loginPassword').value;
+  const msg = document.getElementById('loginMsg');
+  msg.style.display = 'none';
+  if(!email || !pw){
+    msg.textContent = 'Please enter your email and password.'; msg.style.display = 'block'; return;
+  }
+  try{
+    const { error } = await supabaseClient.auth.signInWithPassword({ email, password: pw });
+    if(error){
+      msg.textContent = error.message === 'Invalid login credentials' ? 'Incorrect email or password.' : error.message;
+      msg.style.display = 'block'; return;
+    }
+    await afterSuccessfulLogin();
+  }catch(err){
+    msg.textContent = 'Something went wrong signing in. Please try again.'; msg.style.display = 'block';
+  }
+});
+
+// ---------- LOAD & RENDER JOBS ----------
+async function loadJobs(){
+  const { data, error } = await supabaseClient.from('jobs').select('*').order('posted_date', { ascending: false });
+  allJobs = (data || []).map(row => ({
+    id: row.id, title: row.title, company: row.company, location: row.location, type: row.type,
+    salary: row.salary, description: row.description, requirements: row.requirements,
+    status: row.status, postedDate: row.posted_date
+  }));
+  return allJobs;
+}
+
+function jobCardHtml(job){
+  const open = job.status !== 'closed';
+  return `
+  <div class="job-card">
+    <div class="job-card-top">
+      <div>
+        <div class="job-title">${escapeHtml(job.title)}</div>
+        <div class="job-company">${escapeHtml(job.company)}</div>
+      </div>
+      <div class="verified-badge">
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.5 9L10 3" stroke="#2F8F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Verified
+      </div>
+    </div>
+    <div class="job-meta">
+      <span>${escapeHtml(job.location || 'Location N/A')}</span>
+      <span>${escapeHtml(job.type || 'Full-time')}</span>
+      ${job.salary ? `<span>${escapeHtml(job.salary)}</span>` : ''}
+    </div>
+    <div class="job-desc">${escapeHtml(job.description)}</div>
+    <div class="job-card-bottom">
+      <span class="job-date">Posted ${fmtDate(job.postedDate)}</span>
+      <button class="btn-view" onclick="openJobModal('${job.id}')" ${open ? '' : 'disabled'}>${open ? 'View & Apply' : 'Closed'}</button>
+    </div>
+  </div>`;
+}
+
+async function renderJobs(filterText){
+  const grid = document.getElementById('jobGrid');
+  let jobs = allJobs.filter(j => j.status !== 'closed');
+  if(filterText){
+    const f = filterText.toLowerCase();
+    jobs = jobs.filter(j =>
+      (j.title||'').toLowerCase().includes(f) ||
+      (j.location||'').toLowerCase().includes(f) ||
+      (j.description||'').toLowerCase().includes(f) ||
+      (j.company||'').toLowerCase().includes(f)
+    );
+  }
+  document.getElementById('jobCount').textContent = jobs.length;
+  document.getElementById('statOpen').textContent = allJobs.filter(j=>j.status!=='closed').length;
+  if(jobs.length === 0){
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1;"><h3>No matching positions</h3><p>Try a different search, or check back soon — new verified opportunities are added regularly.</p></div>`;
+    return;
+  }
+  grid.innerHTML = jobs.map(jobCardHtml).join('');
+}
+
+// ---------- JOB MODAL (view + apply) ----------
+function openJobModal(jobId){
+  const job = allJobs.find(j => j.id === jobId);
+  if(!job) return;
+
+  // Require candidate sign-in before showing the apply form
+  if(!currentUser){
+    pendingJobId = jobId;
+    openAccountModal();
+    return;
+  }
+
+  const reqItems = (job.requirements || '').split('\n').map(s=>s.trim()).filter(Boolean);
+  document.getElementById('jobModalBody').innerHTML = `
+    <div class="verified-badge" style="width:fit-content; margin-bottom:10px;">
+      <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.5 9L10 3" stroke="#2F8F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Verified opportunity
+    </div>
+    <h2>${escapeHtml(job.title)}</h2>
+    <div class="job-company">${escapeHtml(job.company)} · ${escapeHtml(job.location||'')} · ${escapeHtml(job.type||'')}${job.salary ? ' · ' + escapeHtml(job.salary) : ''}</div>
+
+    <div class="modal-section">
+      <h4>About the role</h4>
+      <p>${escapeHtml(job.description)}</p>
+    </div>
+    ${reqItems.length ? `<div class="modal-section"><h4>What we're looking for</h4><ul>${reqItems.map(r=>`<li>${escapeHtml(r)}</li>`).join('')}</ul></div>` : ''}
+
+    <div class="modal-section">
+      <h4>Submit your application</h4>
+      <div class="hint" style="margin-bottom:14px;">Applying as <strong>${escapeHtml(currentUser.name)}</strong> (${escapeHtml(currentUser.email)}) — <a href="#" id="switchAccountLink" style="text-decoration:underline; color:var(--verify);">not you?</a></div>
+      <form id="applyForm">
+        <div class="field"><label>Phone number</label><input type="tel" id="aPhone" required></div>
+        <div class="field"><label>Cover note (optional)</label><textarea id="aNote" placeholder="A few lines on why you're the right fit for this role…"></textarea></div>
+        <div class="field">
+          <label>Resume (PDF, under 4MB)</label>
+          <div class="file-drop" id="fileDropZone">Click to upload your resume</div>
+          <input type="file" id="aResume" accept="application/pdf" style="display:none;" required>
+        </div>
+        <button type="submit" class="btn-primary" id="applySubmitBtn">Submit application</button>
+        <div id="applyMsg" class="form-msg" style="display:none;"></div>
+      </form>
+    </div>
+  `;
+  document.getElementById('jobModal').classList.add('open');
+
+  document.getElementById('switchAccountLink').addEventListener('click', async (e) => {
+    e.preventDefault();
+    await supabaseClient.auth.signOut();
+    currentUser = null; isAdmin = false;
+    updateAccountUI();
+    document.getElementById('jobModal').classList.remove('open');
+    pendingJobId = jobId;
+    openAccountModal();
+  });
+
+  const dropZone = document.getElementById('fileDropZone');
+  const fileInput = document.getElementById('aResume');
+  dropZone.addEventListener('click', () => fileInput.click());
+  fileInput.addEventListener('change', () => {
+    if(fileInput.files[0]){
+      dropZone.textContent = '✓ ' + fileInput.files[0].name;
+      dropZone.classList.add('has-file');
+    }
+  });
+
+  document.getElementById('applyForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('applyMsg');
+    const btn = document.getElementById('applySubmitBtn');
+    const file = fileInput.files[0];
+    if(!file){
+      msg.textContent = 'Please attach your resume as a PDF.'; msg.className='form-msg err'; msg.style.display='block';
+      return;
+    }
+    if(file.size > 4 * 1024 * 1024){
+      msg.textContent = 'File is too large — please keep your resume under 4MB.'; msg.className='form-msg err'; msg.style.display='block';
+      return;
+    }
+    btn.disabled = true; btn.textContent = 'Submitting…';
+    try{
+      const resumePath = `${currentUser.id}/${uid('resume')}_${file.name.replace(/[^a-zA-Z0-9._-]/g,'_')}`;
+      const { error: uploadError } = await supabaseClient.storage.from('resumes').upload(resumePath, file, { contentType: 'application/pdf' });
+      if(uploadError) throw uploadError;
+
+      const { error: insertError } = await supabaseClient.from('applications').insert({
+        job_id: job.id,
+        job_title: job.title,
+        applicant_name: currentUser.name,
+        applicant_email: currentUser.email,
+        phone: document.getElementById('aPhone').value.trim(),
+        note: document.getElementById('aNote').value.trim(),
+        resume_path: resumePath,
+        resume_filename: file.name,
+        user_id: currentUser.id
+      });
+      if(insertError) throw insertError;
+
+      msg.textContent = '✓ Application submitted successfully. Our hiring team will review your profile and be in touch if there\'s a fit.';
+      msg.className = 'form-msg ok'; msg.style.display='block';
+      document.getElementById('applyForm').reset();
+      dropZone.textContent = 'Click to upload your resume';
+      dropZone.classList.remove('has-file');
+      btn.textContent = 'Submit application';
+    }catch(err){
+      msg.textContent = 'Something went wrong submitting your application. Please try again.';
+      msg.className = 'form-msg err'; msg.style.display='block';
+      btn.disabled = false; btn.textContent = 'Submit application';
+    }
+  });
+}
+
+document.getElementById('closeJobModal').addEventListener('click', () => {
+  document.getElementById('jobModal').classList.remove('open');
+});
+document.getElementById('jobModal').addEventListener('click', (e) => {
+  if(e.target.id === 'jobModal') document.getElementById('jobModal').classList.remove('open');
+});
+
+document.getElementById('searchForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  renderJobs(document.getElementById('searchInput').value);
+});
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  renderJobs(e.target.value);
+});
+
+// ---------- ADMIN AUTH (secret #admin popup — signs in through the same Supabase account) ----------
+document.getElementById('adminLoginBtn').addEventListener('click', async () => {
+  const email = document.getElementById('adminEmail').value.trim().toLowerCase();
+  const pass = document.getElementById('adminPassword').value;
+  const msg = document.getElementById('adminLoginMsg');
+  msg.style.display = 'none';
+  try{
+    const { error } = await supabaseClient.auth.signInWithPassword({ email, password: pass });
+    if(error){
+      msg.textContent = 'Incorrect email or password.'; msg.style.display = 'block'; return;
+    }
+    await refreshCurrentUser();
+    if(!isAdmin){
+      await supabaseClient.auth.signOut();
+      currentUser = null;
+      msg.textContent = 'This account is not authorized for admin access.'; msg.style.display = 'block';
+      return;
+    }
+    document.getElementById('adminModal').classList.remove('open');
+    document.getElementById('admin-section').style.display = 'block';
+    document.getElementById('adminEmail').value = '';
+    document.getElementById('adminPassword').value = '';
+    updateAccountUI();
+    window.scrollTo({top: document.getElementById('admin-section').offsetTop - 80, behavior:'smooth'});
+    refreshAdminData();
+  }catch(err){
+    msg.textContent = 'Something went wrong signing in. Please try again.'; msg.style.display = 'block';
+  }
+});
+document.getElementById('adminPassword').addEventListener('keydown', (e) => {
+  if(e.key === 'Enter') document.getElementById('adminLoginBtn').click();
+});
+document.getElementById('adminLogoutBtn').addEventListener('click', async () => {
+  await supabaseClient.auth.signOut();
+  isAdmin = false; currentUser = null;
+  document.getElementById('admin-section').style.display = 'none';
+  document.getElementById('adminEmail').value = '';
+  document.getElementById('adminPassword').value = '';
+  updateAccountUI();
+});
+
+// ---------- ADMIN TABS ----------
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.admin-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+    if(btn.dataset.tab === 'manage') renderManageList();
+    if(btn.dataset.tab === 'applications') renderApplications();
+  });
+});
+
+// ---------- POST / EDIT JOB ----------
+document.getElementById('submitJobBtn').addEventListener('click', async () => {
+  const title = document.getElementById('fTitle').value.trim();
+  const company = document.getElementById('fCompany').value.trim();
+  const location = document.getElementById('fLocation').value.trim();
+  const type = document.getElementById('fType').value;
+  const salary = document.getElementById('fSalary').value.trim();
+  const description = document.getElementById('fDesc').value.trim();
+  const requirements = document.getElementById('fReq').value.trim();
+  const editingId = document.getElementById('editingJobId').value;
+  const msg = document.getElementById('jobFormMsg');
+
+  if(!title || !company || !description){
+    msg.textContent = 'Please fill in at least title, company and description.';
+    msg.className = 'form-msg err'; msg.style.display = 'block';
+    return;
+  }
+
+  try{
+    if(editingId){
+      const { error } = await supabaseClient.from('jobs').update({
+        title, company, location, type, salary, description, requirements
+      }).eq('id', editingId);
+      if(error) throw error;
+      msg.textContent = '✓ Job updated.';
+    }else{
+      const { data: insertedJob, error } = await supabaseClient.from('jobs').insert({
+        title, company, location, type, salary, description, requirements, status: 'open'
+      }).select('id').single();
+      if(error) throw error;
+      msg.textContent = '✓ Job published and now live. Notifying candidates…';
+      supabaseClient.functions.invoke('notify-new-job', {
+        body: { title, company, location, type, jobId: insertedJob ? insertedJob.id : null }
+      }).then(({ error: notifyError }) => {
+        if(!notifyError){
+          msg.textContent = '✓ Job published and now live. Candidates have been notified.';
+        }
+      }).catch(() => { /* non-critical, job is already posted */ });
+    }
+    msg.className = 'form-msg ok'; msg.style.display = 'block';
+    clearJobForm();
+    await loadJobs();
+    renderJobs();
+    renderManageList();
+    populateJobFilter();
+  }catch(err){
+    msg.textContent = 'Something went wrong publishing this job. Please try again.';
+    msg.className = 'form-msg err'; msg.style.display = 'block';
+  }
+});
+
+function clearJobForm(){
+  ['fTitle','fCompany','fLocation','fSalary','fDesc','fReq'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('fType').value = 'Full-time';
+  document.getElementById('editingJobId').value = '';
+  document.getElementById('postFormTitle').textContent = 'Post a new job';
+  document.getElementById('submitJobBtn').textContent = 'Publish job';
+}
+
+function editJob(jobId){
+  const job = allJobs.find(j => j.id === jobId);
+  if(!job) return;
+  document.getElementById('fTitle').value = job.title;
+  document.getElementById('fCompany').value = job.company;
+  document.getElementById('fLocation').value = job.location || '';
+  document.getElementById('fType').value = job.type || 'Full-time';
+  document.getElementById('fSalary').value = job.salary || '';
+  document.getElementById('fDesc').value = job.description;
+  document.getElementById('fReq').value = job.requirements || '';
+  document.getElementById('editingJobId').value = job.id;
+  document.getElementById('postFormTitle').textContent = 'Edit job';
+  document.getElementById('submitJobBtn').textContent = 'Save changes';
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.admin-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector('[data-tab="post"]').classList.add('active');
+  document.getElementById('panel-post').classList.add('active');
+  window.scrollTo({top: document.getElementById('admin-section').offsetTop - 80, behavior:'smooth'});
+}
+
+async function toggleJobStatus(jobId){
+  const job = allJobs.find(j => j.id === jobId);
+  if(!job) return;
+  const newStatus = job.status === 'closed' ? 'open' : 'closed';
+  await supabaseClient.from('jobs').update({ status: newStatus }).eq('id', jobId);
+  await loadJobs();
+  renderManageList();
+  renderJobs();
+}
+
+async function deleteJob(jobId){
+  if(!confirm('Delete this job posting permanently? This cannot be undone.')) return;
+  await supabaseClient.from('jobs').delete().eq('id', jobId);
+  await loadJobs();
+  renderManageList();
+  renderJobs();
+  populateJobFilter();
+}
+
+function shareJobLink(jobId){
+  const link = window.location.origin + window.location.pathname + '?job=' + jobId;
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(link).then(() => {
+      alert('Direct link copied:\n' + link);
+    }).catch(() => {
+      prompt('Copy this direct link:', link);
+    });
+  }else{
+    prompt('Copy this direct link:', link);
+  }
+}
+
+function renderManageList(){
+  const container = document.getElementById('manageList');
+  if(allJobs.length === 0){
+    container.innerHTML = `<div class="empty-state"><h3>No positions posted yet</h3><p>Use "Post a job" to publish your first opportunity.</p></div>`;
+    return;
+  }
+  container.innerHTML = allJobs.map(job => `
+    <div class="admin-job-row">
+      <div class="info">
+        <div class="t">${escapeHtml(job.title)} <span class="status-pill ${job.status==='closed'?'closed':'open'}">${job.status==='closed' ? 'Closed' : 'Open'}</span></div>
+        <div class="s">${escapeHtml(job.company)} · ${escapeHtml(job.location||'')} · Posted ${fmtDate(job.postedDate)}</div>
+      </div>
+      <div class="row-actions">
+        <button class="icon-btn" onclick="shareJobLink('${job.id}')">Share</button>
+        <button class="icon-btn" onclick="editJob('${job.id}')">Edit</button>
+        <button class="icon-btn" onclick="toggleJobStatus('${job.id}')">${job.status==='closed' ? 'Reopen' : 'Close'}</button>
+        <button class="icon-btn danger" onclick="deleteJob('${job.id}')">Delete</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ---------- APPLICATIONS ----------
+async function loadApplications(){
+  const { data, error } = await supabaseClient.from('applications').select('*').order('applied_date', { ascending: false });
+  allApplications = (data || []).map(row => ({
+    id: row.id, jobId: row.job_id, jobTitle: row.job_title, name: row.applicant_name, email: row.applicant_email,
+    phone: row.phone, note: row.note, resumePath: row.resume_path, resumeFileName: row.resume_filename,
+    appliedDate: row.applied_date
+  }));
+  return allApplications;
+}
+
+function populateJobFilter(){
+  const sel = document.getElementById('appJobFilter');
+  const current = sel.value;
+  sel.innerHTML = '<option value="">All jobs</option>' + allJobs.map(j => `<option value="${j.id}">${escapeHtml(j.title)}</option>`).join('');
+  sel.value = current;
+}
+document.getElementById('appJobFilter').addEventListener('change', renderApplications);
+
+async function renderApplications(){
+  const filterId = document.getElementById('appJobFilter').value;
+  const list = filterId ? allApplications.filter(a => a.jobId === filterId) : allApplications;
+  const container = document.getElementById('applicationsList');
+  if(list.length === 0){
+    container.innerHTML = `<div class="empty-state"><h3>No applications yet</h3><p>Applications will appear here as soon as candidates apply.</p></div>`;
+    return;
+  }
+  const withUrls = await Promise.all(list.map(async (a) => {
+    let resumeUrl = '#';
+    try{
+      const { data } = await supabaseClient.storage.from('resumes').createSignedUrl(a.resumePath, 3600);
+      if(data && data.signedUrl) resumeUrl = data.signedUrl;
+    }catch(e){}
+    return { ...a, resumeUrl };
+  }));
+  container.innerHTML = withUrls.map(a => `
+    <div class="app-card">
+      <div class="app-card-top">
+        <div>
+          <div class="app-name">${escapeHtml(a.name)}</div>
+          <div class="app-for">Applied for: ${escapeHtml(a.jobTitle)} · ${fmtDate(a.appliedDate)}</div>
+        </div>
+      </div>
+      <div class="app-contact">${escapeHtml(a.email)} · ${escapeHtml(a.phone)}</div>
+      ${a.note ? `<div class="app-note">${escapeHtml(a.note)}</div>` : ''}
+      <a class="resume-link" href="${a.resumeUrl}" target="_blank" rel="noopener">
+        📄 View / download resume (${escapeHtml(a.resumeFileName || 'resume.pdf')})
+      </a>
+    </div>
+  `).join('');
+}
+
+async function refreshAdminData(){
+  await loadJobs();
+  await loadApplications();
+  renderManageList();
+  populateJobFilter();
+  renderApplications();
+}
+
+// ---------- INIT ----------
+function checkAdminHash(){
+  if(window.location.hash === '#admin'){
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+    if(isAdmin){
+      document.getElementById('admin-section').style.display = 'block';
+      window.scrollTo({top: document.getElementById('admin-section').offsetTop - 80, behavior:'smooth'});
+    }else{
+      document.getElementById('adminLoginMsg').style.display = 'none';
+      document.getElementById('adminModal').classList.add('open');
+    }
+  }
+}
+window.addEventListener('hashchange', checkAdminHash);
+document.getElementById('closeAdminModal').addEventListener('click', () => {
+  document.getElementById('adminModal').classList.remove('open');
+});
+document.getElementById('adminModal').addEventListener('click', (e) => {
+  if(e.target.id === 'adminModal') document.getElementById('adminModal').classList.remove('open');
+});
+
+// ---------- FOOTER MODALS (About / Privacy / Contact) ----------
+function setupSimpleModal(linkId, modalId, closeId){
+  document.getElementById(linkId).addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById(modalId).classList.add('open');
+  });
+  document.getElementById(closeId).addEventListener('click', () => {
+    document.getElementById(modalId).classList.remove('open');
+  });
+  document.getElementById(modalId).addEventListener('click', (e) => {
+    if(e.target.id === modalId) document.getElementById(modalId).classList.remove('open');
+  });
+}
+setupSimpleModal('openAboutLink', 'aboutModal', 'closeAboutModal');
+setupSimpleModal('openPrivacyLink', 'privacyModal', 'closePrivacyModal');
+setupSimpleModal('openContactLink', 'contactModal', 'closeContactModal');
+
+(async function init(){
+  await refreshCurrentUser();
+  updateAccountUI();
+  await loadJobs();
+  renderJobs();
+
+  if(isAdmin){
+    document.getElementById('admin-section').style.display = 'block';
+    refreshAdminData();
+  }else if(currentUser){
+    autoEnableNotifications();
+  }
+
+  const directJobId = new URLSearchParams(window.location.search).get('job');
+  if(directJobId){
+    history.replaceState(null, '', window.location.pathname + window.location.hash);
+    if(allJobs.find(j => j.id === directJobId)){
+      openJobModal(directJobId);
+    }
+  }
+  checkAdminHash();
+})();
+</script>
+</body>
+</html>
